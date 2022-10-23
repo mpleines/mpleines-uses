@@ -4,8 +4,8 @@ import Dropdown from './Dropdown';
 import ThemeToggle from './ThemeToggle';
 ---
 
-<header class="z-20 sticky top-0 h-18 w-full backdrop-blur-md">
-  <nav class="mx-auto max-w-3xl flex p-4 justify-between">
+<header class="z-20 sticky top-0 h-[60px] w-full backdrop-blur-md">
+  <nav class="mx-auto h-full max-w-3xl flex p-4 justify-between">
     <div class="flex items-center gap-4">
       <a href="/">
         <h2 class="text-xl font-bold">Maik Pleines</h2>
@@ -24,7 +24,7 @@ import ThemeToggle from './ThemeToggle';
         </a>
       </div>
     </div>
-    <div>
+    <div class="flex items-center gap-4">
       <ThemeToggle client:idle />
     </div>
     <div class="flex md:hidden">
