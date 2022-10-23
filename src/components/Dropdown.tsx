@@ -1,5 +1,10 @@
 import { FunctionComponent, useState } from 'react';
-import { FiList, FiGithub, FiHome, FiExternalLink } from 'react-icons/fi';
+import {
+  FiList,
+  FiGithub,
+  FiHome,
+  FiExternalLink,
+} from 'react-icons/fi/index.js';
 
 interface DropdownProps {}
 

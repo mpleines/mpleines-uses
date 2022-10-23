@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect } from 'react';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { FiSun, FiMoon } from 'react-icons/fi/index.js';
 import useTheme from '../hooks/useTheme';
 
 interface ThemeToggleProps {}
