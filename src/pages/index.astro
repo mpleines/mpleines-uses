@@ -1,0 +1,50 @@
+---
+import { FiArrowRight } from 'react-icons/fi';
+import Hero from '../components/Hero';
+import Layout from '../layouts/Layout.astro';
+
+const posts = await Astro.glob('./posts/*md');
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <Hero />
+    <div class="mt-12 mx-auto max-w-3xl px-7">
+      <section class="">
+        <p class="text-xl">
+          As a developer I spent a lot of time at my desk, so I like to
+          constantly search for new things which improve my workflow. In case
+          you wondered what tech I'm using, I created this website which
+          showcases everything on and around my desk.
+          <span class="text-red">
+            <a
+              href="https://maikpleines.com"
+              class="inline-flex items-center gap-1"
+            >
+              Learn more about me <FiArrowRight />
+            </a>
+          </span>
+        </p>
+      </section>
+      <section class="mt-12">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {
+            posts.map(({ url, frontmatter }) => (
+              <li class="mb-6">
+                <a href={url}>
+                  <img
+                    src={frontmatter.heroImage}
+                    alt=""
+                    class="h-[240px] w-full object-cover border rounded-xl"
+                  />
+                  <h1 class="text-2xl">{frontmatter.title}</h1>
+                  <span>{frontmatter.description}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </main>
+</Layout>

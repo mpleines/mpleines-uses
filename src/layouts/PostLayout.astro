@@ -1,0 +1,39 @@
+---
+import Footer from '../components/Footer';
+import Header from '../components/Header.astro';
+
+export interface Props {
+  title: string;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={frontmatter.description} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="bg-white dark:bg-darkGrey text-darkGrey dark:text-white">
+    <Header />
+    <article class="mx-auto max-w-2xl px-4">
+      <img
+        src={frontmatter.heroImage}
+        alt={frontmatter.description}
+        class="mt-2 w-[720px] h-[320px] object-cover rounded-xl border border-black dark:border-white"
+      />
+      <h1 class="text-4xl mt-6">{frontmatter.title}</h1>
+      <p class="text-silver dark:text-white italic">
+        {frontmatter.description}
+      </p>
+      <hr class="border-top border-darkGrey dark:border-white my-2" />
+      <slot />
+    </article>
+    <Footer />
+  </body>
+</html>
